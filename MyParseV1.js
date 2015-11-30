@@ -1,4 +1,4 @@
-htmlToJson=require('/opt/bitnami/nodejs/node_modules/html-to-json');
+htmlToJson=require('html-to-json');
 var lineReader = require('line-reader');
 var mysql = require('mysql');
 var res="";
