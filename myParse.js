@@ -1,4 +1,4 @@
-htmlToJson=require('node_modules/html-to-json');
+htmlToJson=require('html-to-json');
 var lineReader = require('line-reader');
 var res="";
 
