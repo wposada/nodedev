@@ -75,9 +75,9 @@ var promise = htmlToJson.parse(html, {
     dirs= $spa.text();
     return dirs;
   }],
-  'txt': [".pl_content", function ($spa) {
+  'txt': [".pl_nudge_player", function ($spa) {
      //txt=$spa.text();
-     txt="hi5"
+     txt=$spa.attr('data-playerstr');
     return txt;
   }],
   'action': [".pl_content", function ($spa) {
