@@ -76,8 +76,9 @@ var promise = htmlToJson.parse(html, {
     return dirs;
   }],
   'txt': [".pl_content", function ($spa) {
-     txt=$spa.text();
-    return $spa.not('.pl_portal_name').text();
+     //txt=$spa.text();
+     txt="hi5"
+    return txt;
   }],
   'action': [".pl_content", function ($spa) {
     var txt2=$spa.not('.pl_portal_name').text();
