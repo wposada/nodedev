@@ -77,7 +77,7 @@ var promise = htmlToJson.parse(html, {
   }],
   'txt': [".pl_nudge_player", function ($spa) {
      //txt=$spa.text();
-     txt=$spa.attr('data-playerstr').text();
+     txt=$spa.find('').text();
     return txt;
   }],
   'action': [".pl_content", function ($spa) {
