@@ -102,7 +102,7 @@ lineReader.eachLine('/media/sf_Ingress/Order/Junio/file_0630.txt', function(line
       });
 }
 
-  console.log(time+"-"+names+"-"+dirs+"\n");
+  console.log(time+"-"+names+"-"+txt+"\n");
 }).then(function () {
   console.log("I'm done!!");
   connection.end();
