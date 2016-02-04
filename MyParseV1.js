@@ -96,9 +96,9 @@ lineReader.eachLine('/media/sf_Ingress/Order/Junio/file_0630.txt', function(line
   Parseando(line);
   if(time !=""){
       connection.query('INSERT INTO portals (name, lat, lng) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE name=?, lat=?,lng=?',[names,lat,lng,names,lat,lng], function(err, rows, fields) {
-  }
-  if (err) throw err;
-});
+         if (err) throw err;
+      });
+}
 
   console.log(time+"-"+names+"\n");
 }).then(function () {
