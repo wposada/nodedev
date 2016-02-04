@@ -9,6 +9,7 @@ var lat="";
 var lng="";
 var names="";
 var dirs="";
+var action="";
 
 var connection = mysql.createConnection({
    host: 'localhost',
@@ -101,7 +102,7 @@ lineReader.eachLine('/media/sf_Ingress/Order/Junio/file_0630.txt', function(line
       });
 }
 
-  console.log(time+"-"+names+"-"+action+"\n");
+  console.log(time+"-"+names+"-"+actions+"\n");
 }).then(function () {
   console.log("I'm done!!");
   connection.end();
