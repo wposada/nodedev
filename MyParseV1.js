@@ -13,7 +13,7 @@ var dirs="";
 var connection = mysql.createConnection({
    host: 'localhost',
    user: 'root',
-   password: 'm+0j0M3=.6Si',
+   password: 'bitnami',
    database: 'cake',
    port: 3306
 });
