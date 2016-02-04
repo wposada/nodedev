@@ -10,6 +10,7 @@ var lng="";
 var names="";
 var dirs="";
 var action="";
+var txt="";
 
 var connection = mysql.createConnection({
    host: 'localhost',
@@ -75,6 +76,7 @@ var promise = htmlToJson.parse(html, {
     return dirs;
   }],
   'txt': [".pl_content", function ($spa) {
+     txt=$spa.text();
     return $spa.not('.pl_portal_name').text();
   }],
   'action': [".pl_content", function ($spa) {
