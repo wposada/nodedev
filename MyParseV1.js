@@ -92,7 +92,7 @@ var promise = htmlToJson.parse(html, {
 
 
 // read all lines:
-lineReader.eachLine('P1.txt', function(line) {
+lineReader.eachLine('/media/sf_Ingress/Order/Junio/file_0630.txt', function(line) {
   Parseando(line);
   connection.query('INSERT INTO portals (name, lat, lng) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE name=?, lat=?,lng=?',[names,lat,lng,names,lat,lng], function(err, rows, fields) {
   if (err) throw err;
