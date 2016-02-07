@@ -90,7 +90,7 @@ var promise = htmlToJson.parse(html, {
      txt=$spa.text();
      txt2 = txt.split(' ');
     //return txt2[1]+"<--";
-    return txt2;
+    return txt2[1];
   }],
   'action': [".pl_content", function ($spa) {
           txt=$spa.text();
