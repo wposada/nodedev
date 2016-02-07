@@ -164,7 +164,7 @@ function fechaFile(filePath){
     console.error(err);
   }
   else{
-     farchivo=stats.atime.toISOString().replace(/T/, ' ').replace(/\..+/, '');
+     farchivo=stats.ctime.toISOString().replace(/T/, ' ').replace(/\..+/, '');
      myparseo(filePath,farchivo);
     return 1;
   }
