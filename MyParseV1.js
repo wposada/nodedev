@@ -87,11 +87,12 @@ var promise = htmlToJson.parse(html, {
   }],
    'txt': [".pl_broad", function ($spa) {
      //txt=$spa.text();
-     txt=$spa.text();
+     txt2=$spa.text();
      txt2 = txt.split(' ');
-    //return txt2[1]+"<--";
+     txt=txt2[1]+"<--"
+    return txt2[1]+"<--";
     return "hola world";
-  }],
+    }],
   'action': [".pl_content", function ($spa) {
           txt=$spa.text();
     return txt;
