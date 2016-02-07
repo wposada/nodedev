@@ -12,7 +12,8 @@ var dirs="";
 var action="";
 var txt="";
 var agent="";
-
+var fecha="20150630 ";
+var arch="/media/sf_Ingress/Order/Junio/file_0630.txt";
 var connection = mysql.createConnection({
    host: 'localhost',
    user: 'root',
@@ -110,7 +111,7 @@ var promise = htmlToJson.parse(html, {
 
 
 // read all lines:
-lineReader.eachLine('/media/sf_Ingress/Order/Junio/file_0630.txt', function(line) {
+lineReader.eachLine(arch, function(line) {
   Parseando(line);
   if(time !=""){
       connection.query('INSERT INTO portals (name, lat, lng,address) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE name=?, lat=?, lng=?, address=?',[names,lat,lng,dirs,names,lat,lng,dirs], function(err, rows, fields) {
@@ -121,8 +122,8 @@ lineReader.eachLine('/media/sf_Ingress/Order/Junio/file_0630.txt', function(line
       });
   }
    if( txt=="captured"){
-      faction=res=="res"?"RES":"ENL";
-      captured=time;
+      faction=enl+res;
+      captured=fecha+time;
       connection.query('INSERT INTO guardians2 (agent, lat, lng,faction,captured) VALUES (?, ?, ?, ?,?) ON DUPLICATE KEY UPDATE agent=?, lat=?, lng=?,faction=?,captured=?',[agent,lat,lng,faction,captured,agent,lat,lng,faction,captured], function(err, rows, fields) {
       //connection.query('INSERT INTO portals (name, lat, lng) VALUES (?, ?, ?)',[names,lat,lng], function(err, rows, fields) {
          if (err) throw err;
