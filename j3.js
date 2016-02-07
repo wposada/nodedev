@@ -162,8 +162,8 @@ function fechaFile(filePath){
     console.error(err);
   }
   else{
+     console.log(filePath);
      console.log(stats.mtime.toISOString().replace(/T/, ' ').replace(/\..+/, ''));
-     var ff=1;
     return 1;
   }
 });
@@ -172,5 +172,5 @@ function fechaFile(filePath){
 walk('/media/sf_Ingress/Order/Junio/', function(filePath, stat) {
     var fs = require('fs');
     var fechasalida=fechaFile(filePath);
-    console.log(filePath+"-"+fechasalida);
+    //console.log(filePath+"-"+fechasalida);
 });
