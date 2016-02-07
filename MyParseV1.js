@@ -117,7 +117,7 @@ lineReader.eachLine(arch, function(line) {
       });
   }
    if( txt=="captured"){
-      faction=res=='undefined'?"ENL":"RES";
+      faction=typeof res !== 'undefined' ?"ENL":"RES";
       captured=fecha+time;
       connection.query('INSERT INTO guardians2 (agent, lat, lng,faction,captured) VALUES (?, ?, ?, ?,?) ON DUPLICATE KEY UPDATE agent=?, lat=?, lng=?,faction=?,captured=?',[agent,lat,lng,faction,captured,agent,lat,lng,faction,captured], function(err, rows, fields) {
       //connection.query('INSERT INTO portals (name, lat, lng) VALUES (?, ?, ?)',[names,lat,lng], function(err, rows, fields) {
