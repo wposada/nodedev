@@ -25,7 +25,9 @@ walk('/media/sf_Ingress/Order/Julio/', function(filePath, stat) {
     console.error(err);
   }
   else{
-    console.dir(stats.mtime);
+    console.dir(stats.mtime.toISOString().
+  replace(/T/, ' ').      // replace T with a space
+  replace(/\..+/, '') );
   }
 });
     
