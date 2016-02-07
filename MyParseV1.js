@@ -75,10 +75,6 @@ var promise = htmlToJson.parse(html, {
     dirs= $spa.text();
     return dirs;
   }],
-'enl': ['.pl_nudge_player', function ($spa) {
-    enl= $spa.text()+"11";
-    return enl;
-  }],
   'agent': [".pl_nudge_player", function ($spa) {
      //txt=$spa.text();
      agent=$spa.text();
@@ -120,14 +116,14 @@ lineReader.eachLine(arch, function(line) {
       });
   }
    if( txt=="captured"){
-      faction=enl+res;
+      faction=res!='undefined?"RES":"ENL";
       captured=fecha+time;
       connection.query('INSERT INTO guardians2 (agent, lat, lng,faction,captured) VALUES (?, ?, ?, ?,?) ON DUPLICATE KEY UPDATE agent=?, lat=?, lng=?,faction=?,captured=?',[agent,lat,lng,faction,captured,agent,lat,lng,faction,captured], function(err, rows, fields) {
       //connection.query('INSERT INTO portals (name, lat, lng) VALUES (?, ?, ?)',[names,lat,lng], function(err, rows, fields) {
          if (err) throw err;
       });
   }
-  console.log(time+"-"+names+"-"+agent+"---"+enl+"-"+res+"\n");
+  console.log(time+"-"+names+"-"+agent+"---"+enl+"-"+faction+"\n");
 }).then(function () {
   console.log("I'm done!!");
   connection.end();
