@@ -4,7 +4,7 @@ var mysql = require('mysql');
 var res="";
 var time="";
 var enl="";
-var res=""
+var res="";
 var lat="";
 var lng="";
 var names="";
@@ -50,8 +50,6 @@ function Parseando(html){
 //<div class="pl_timestamp_spacer"></div></div></div>
 //<div class="pl_content pl_broad">
 //<span class="ENLIGHTENED pl_nudge_player" data-playerstr="@dcrodg" data-isfaction="false">dcrodg</span> captured <span class="pl_portal_name" data-plat="4.656798" data-plng="-74.054469">Arbol De Helm</span> <span class="pl_portal_address">(Carrera 7 # 73-1 a 73-99, Bogotá, Cundinamarca, Colombia)</span></div></div>';
-enl="";
-res="";
 var promise = htmlToJson.parse(html, { 
   'time': function ($doc) {
       time = $doc.find('.pl_timestamp_date').text();
@@ -129,7 +127,7 @@ lineReader.eachLine(arch, function(line) {
          if (err) throw err;
       });
   }
-  console.log(time+"-"+names+"-"+agent+"---"+enl+"-"+txt+"\n");
+  console.log(time+"-"+names+"-"+agent+"---"+enl+"-"+res+"\n");
 }).then(function () {
   console.log("I'm done!!");
   connection.end();
