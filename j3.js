@@ -162,7 +162,9 @@ function fechaFile(filePath){
     console.error(err);
   }
   else{
-    return stats.mtime.toISOString().replace(/T/, ' ').replace(/\..+/, '');
+     console.log(stats.mtime.toISOString().replace(/T/, ' ').replace(/\..+/, ''));
+     var ff=1;
+    return 1;
   }
 });
 }
