@@ -1,4 +1,4 @@
-
+var fs = require("fs");
 function listardir ( path, callback){
      // the callback gets ( err, files) where files is an array of file names
      if( typeof callback !== 'function' ) return
