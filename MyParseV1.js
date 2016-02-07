@@ -11,6 +11,7 @@ var names="";
 var dirs="";
 var action="";
 var txt="";
+var agent="";
 
 var connection = mysql.createConnection({
    host: 'localhost',
@@ -79,7 +80,12 @@ var promise = htmlToJson.parse(html, {
     dirs= $spa.text();
     return dirs;
   }],
-  'txt': [".pl_nudge_player", function ($spa) {
+  'agent': [".pl_nudge_player", function ($spa) {
+     //txt=$spa.text();
+     agent=$spa.text();
+    return txt;
+  }],
+   'txt': [".pl_nudge_player", function ($spa) {
      //txt=$spa.text();
      txt=$spa.text();
     return txt;
@@ -109,7 +115,7 @@ lineReader.eachLine('/media/sf_Ingress/Order/Junio/file_0630.txt', function(line
       });
 }
 
-  console.log(time+"-"+names+"-"+txt+"\n");
+  console.log(time+"-"+names+"-"+txt+"-"+agent+"\n");
 }).then(function () {
   console.log("I'm done!!");
   connection.end();
