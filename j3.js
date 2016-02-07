@@ -169,8 +169,27 @@ function fechaFile(filePath){
 });
 }
 
-walk('/media/sf_Ingress/Order/Prueba/', function(filePath, stat) {
+/*walk('/media/sf_Ingress/Order/Prueba/', function(filePath, stat) {
     var fs = require('fs');
     var fechasalida=fechaFile(filePath);
     //console.log(filePath+"-"+fechasalida);
+});*/
+
+function walkSync(currentDirPath, callback) {
+    var fs = require('fs'),
+        path = require('path');
+    fs.readdirSync(currentDirPath).forEach(function (name) {
+        var filePath = path.join(currentDirPath, name);
+        var stat = fs.statSync(filePath);
+        if (stat.isFile()) {
+            callback(filePath, stat);
+        } else if (stat.isDirectory()) {
+            walk(filePath, callback);
+        }
+    });
+}
+
+walkSync('/media/sf_Ingress/Order/Prueba/', function(filePath, stat) {
+        var fs = require('fs');
+    var fechasalida=fechaFile(filePath);
 });
