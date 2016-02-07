@@ -17,6 +17,6 @@ function walk(currentDirPath, callback) {
     });
 }
 
-walk('path/to/root/dir', function(filePath, stat) {
+walk('/media/sf_Ingress/Order/Julio/', function(filePath, stat) {
     console.log(filePath);
 });
