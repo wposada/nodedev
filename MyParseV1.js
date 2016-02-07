@@ -130,7 +130,7 @@ lineReader.eachLine(arch, function(line) {
          if (err) throw err;
       });
   }
-  console.log(time+"-"+names+"-"+agent+"-"+enlagent+"-"+txt+"\n");
+  console.log(time+"-"+names+"-"+agent+"-"+enl+"-"+txt+"\n");
 }).then(function () {
   console.log("I'm done!!");
   connection.end();
