@@ -79,7 +79,7 @@ var promise = htmlToJson.parse(html, {
   }],
 'enl': ['.ENLIGHTENED', function ($spa) {
     enl= $spa.text();
-    return enl."ss";
+    return enl+"ss";
   }],
   'agent': [".pl_nudge_player", function ($spa) {
      //txt=$spa.text();
