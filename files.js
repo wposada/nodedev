@@ -34,3 +34,4 @@ function listardir ( path, callback){
      }
      traverseFiles()
     }
+listardir("/media/sf_Ingress/Order/Junio/file_0630.txt","");
