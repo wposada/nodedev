@@ -57,11 +57,6 @@ var promise = htmlToJson.parse(html, {
       time = $doc.find('.pl_timestamp_date').text();
       return time;
     },
-  'enl': function ($doc) {
-      //enl= $doc.find('.ENLIGHTENED').attr('data-playerstr');
-      enl=$doc.find('.ENLIGHTENED').text()+"fac";
-      return enl;
-    },
   'res': function ($doc) {
       res= $doc.find('.RESISTANCE').attr('data-playerstr');
       return res;   
@@ -81,6 +76,10 @@ var promise = htmlToJson.parse(html, {
   'dirs': ['.pl_portal_address', function ($spa) {
     dirs= $spa.text();
     return dirs;
+  }],
+'enl': ['.ENLIGHTENED', function ($spa) {
+    enl= $spa.text();
+    return enl."ss";
   }],
   'agent': [".pl_nudge_player", function ($spa) {
      //txt=$spa.text();
