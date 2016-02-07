@@ -87,11 +87,9 @@ var promise = htmlToJson.parse(html, {
   }],
    'txt': [".pl_broad", function ($spa) {
      //txt=$spa.text();
-     txt2=$spa.text();
-     txt2 = txt.split(' ');
-     txt=txt2[1]+"<--"
-    return txt2[1]+"<--";
-    return "hola world";
+     txt="123";
+     return txt;
+
     }],
   'action': [".pl_content", function ($spa) {
           txt=$spa.text();
@@ -120,7 +118,7 @@ lineReader.eachLine('/media/sf_Ingress/Order/Junio/file_0630.txt', function(line
       });
 }
 
-  console.log(time+"-"+names+"-"+txt+"-"+agent+"\n");
+  console.log(time+"-"+names+"-"+agent+"-"+txt+"\n");
 }).then(function () {
   console.log("I'm done!!");
   connection.end();
