@@ -167,7 +167,7 @@ function fechaFile(filePath){
      farchivo=stats.mtime.toISOString().replace(/T/, ' ').replace(/\..+/, '');
      //farchivo=stats.birthtime;
      console.log("-->"+farchivo);
-     //myparseo(filePath,farchivo);
+     myparseo(filePath,farchivo);
     return 1;
   }
 });
