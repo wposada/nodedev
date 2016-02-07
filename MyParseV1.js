@@ -113,7 +113,7 @@ var promise = htmlToJson.parse(html, {
 lineReader.eachLine('/media/sf_Ingress/Order/Junio/file_0630.txt', function(line) {
   Parseando(line);
   if(time !=""){
-      connection.query('INSERT INTO portals (name, lat, lng,addres) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE name=?, lat=?, lng=?, address=?',[names,lat,lng,dirs,names,lat,lng,dirs], function(err, rows, fields) {
+      //connection.query('INSERT INTO portals (name, lat, lng,addres) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE name=?, lat=?, lng=?, address=?',[names,lat,lng,dirs,names,lat,lng,dirs], function(err, rows, fields) {
       //connection.query('INSERT INTO portals (name, lat, lng) VALUES (?, ?, ?)',[names,lat,lng], function(err, rows, fields) {
          if (err) throw err;
       });
