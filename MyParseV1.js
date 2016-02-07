@@ -58,7 +58,8 @@ var promise = htmlToJson.parse(html, {
       return time;
     },
   'enlagent': function ($doc) {
-      enl= $doc.find('.ENLIGHTENED').attr('data-playerstr');
+      //enl= $doc.find('.ENLIGHTENED').attr('data-playerstr');
+      enl=$doc.find('#ENLIGHTENED').text()
       return enl;
     },
   'resagent': function ($doc) {
