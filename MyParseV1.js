@@ -87,7 +87,9 @@ var promise = htmlToJson.parse(html, {
   }],
    'txt': [".pl_broad", function ($spa) {
      //txt=$spa.text();
-     txt="123";
+   action=$spa.text();
+   action2=action.split(" ");
+     txt=action2[1];
      return txt;
 
     }],
