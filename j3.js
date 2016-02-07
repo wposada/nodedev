@@ -25,7 +25,7 @@ walk('/media/sf_Ingress/Order/Julio/', function(filePath, stat) {
     console.error(err);
   }
   else{
-    console.dir(stats.mtime.getMilliseconds();
+    console.dir(stats.mtime.getMilliseconds());
   }
 });
     
