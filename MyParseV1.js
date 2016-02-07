@@ -91,9 +91,11 @@ var promise = htmlToJson.parse(html, {
     return txt;
   }],
   'action': [".pl_content", function ($spa) {
-    var txt2=$spa.text();
-    var txt2 = txt2.split(' ');
-    return txt2[1]+"<--";
+          txt=$spa.text();
+    return txt;
+    //var txt2=$spa.text();
+    //var txt2 = txt2.split(' ');
+    //return txt2[1]+"<--";
   }],
 },function (err, result) {
 //  prettyJSON(result);
