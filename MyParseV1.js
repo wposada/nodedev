@@ -7,6 +7,7 @@ var enl="";
 var res="";
 var lat="";
 var lng="";
+var faction="";
 var names="";
 var dirs="";
 var action="";
