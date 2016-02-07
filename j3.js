@@ -169,7 +169,7 @@ function fechaFile(filePath){
 });
 }
 
-walk('/media/sf_Ingress/Order/Junio/', function(filePath, stat) {
+walk('/media/sf_Ingress/Order/Enero/', function(filePath, stat) {
     var fs = require('fs');
     var fechasalida=fechaFile(filePath);
     //console.log(filePath+"-"+fechasalida);
