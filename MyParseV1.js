@@ -120,7 +120,7 @@ lineReader.eachLine('/media/sf_Ingress/Order/Junio/file_0630.txt', function(line
          if (err) throw err;
       });
   }
-/*   if( txt=="captured"){
+   if( txt=="captured"){
       faction=res!=""?"RES":"ENL";
       captured="captured";
       connection.query('INSERT INTO guardians2 (agent, lat, lng,faction,captured) VALUES (?, ?, ?, ?,captured)',[agent,lat,lng,faction,captured], function(err, rows, fields) {
@@ -128,7 +128,6 @@ lineReader.eachLine('/media/sf_Ingress/Order/Junio/file_0630.txt', function(line
          if (err) throw err;
       });
   }
-*/
   console.log(time+"-"+names+"-"+agent+"-"+action+"-"+txt+"\n");
 }).then(function () {
   console.log("I'm done!!");
