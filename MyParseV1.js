@@ -57,12 +57,12 @@ var promise = htmlToJson.parse(html, {
       time = $doc.find('.pl_timestamp_date').text();
       return time;
     },
-  'enlagent': function ($doc) {
+  'enl': function ($doc) {
       //enl= $doc.find('.ENLIGHTENED').attr('data-playerstr');
       enl=$doc.find('.ENLIGHTENED').text()+"fac";
       return enl;
     },
-  'resagent': function ($doc) {
+  'res': function ($doc) {
       res= $doc.find('.RESISTANCE').attr('data-playerstr');
       return res;   
     },
