@@ -3,6 +3,7 @@ var dir = '/media/sf_Ingress/Order/Julio/'; // your directory
 
 var files = fs.readdirSync(dir);
 files.sort(function(a, b) {
+  console.log(fs.mtime);
                return fs.statSync(dir + a).mtime.getTime() - 
                       fs.statSync(dir + b).mtime.getTime();
            });
