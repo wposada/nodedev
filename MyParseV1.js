@@ -57,7 +57,7 @@ var promise = htmlToJson.parse(html, {
       return time;
     },
   'res': function ($doc) {
-      res= $doc.find('.RESISTANCE').attr('data-playerstr');
+      res= $doc.find('.RESISTANCE').text();
       return res;   
     },
   'lats': ['.pl_portal_name', function ($coor) {    
