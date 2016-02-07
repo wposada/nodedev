@@ -169,5 +169,6 @@ function fechaFile(filePath){
 
 walk('/media/sf_Ingress/Order/Junio/', function(filePath, stat) {
     var fs = require('fs');
-    console.log(filePath+"-"+fechaFile(filePath));
+    var fechasalida=fechaFile(filePath);
+    console.log(filePath+"-"+fechasalida);
 });
