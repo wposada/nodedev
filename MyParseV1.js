@@ -92,8 +92,8 @@ var promise = htmlToJson.parse(html, {
   }],
   'action': [".pl_content", function ($spa) {
     var txt2=$spa.text();
-    var actions = txt2.split(" ");
-    return actions[1];
+    var txt2 = txt2.split(' ');
+    return txt2[1];
   }],
 },function (err, result) {
 //  prettyJSON(result);
