@@ -1,37 +1,16 @@
 var fs = require("fs");
-function listardir ( path, callback){
-     // the callback gets ( err, files) where files is an array of file names
-     if( typeof callback !== 'function' ) return
-     var
-      result = []
-      , files = [ path.replace( /\/\s*$/, '' ) ]
-     function traverseFiles (){
-      if( files.length ) {
-       var name = files.shift()
-       fs.stat(name, function( err, stats){
-        if( err ){
-         if( err.errno == 34 ) traverseFiles()
-    // in case there's broken symbolic links or a bad path
-    // skip file instead of sending error
-         else callback(err)
-        }
-        else if ( stats.isDirectory() ) fs.readdir( name, function( err, files2 ){
-         if( err ) callback(err)
-         else {
-          files = files2
-           .map( function( file ){ return name + '/' + file } )
-           .concat( files )
-          traverseFiles()
-         }
-        })
-        else{
-         result.push(name)
-         traverseFiles()
-        }
-       })
-      }
-      else callback( null, result )
-     }
-     traverseFiles()
-    }
-listardir("/media/sf_Ingress/Order/Junio/file_0630.txt","");
+                fs.readdir(_self.mongoose.rutamodels, FUNCTION(err, files) {
+                    IF (err) {
+                        throw err;
+                    }
+                    files.map(FUNCTION(file) {
+                        RETURN _self.path.join(_self.mongoose.rutamodels, file);
+                    }).filter(FUNCTION(file) {
+                        RETURN fs.statSync(file).isFile();
+                    }).forEach(FUNCTION(file) {
+                        var ext = _self.path.extname(file);
+                        var name_complete = _self.path.basename(file);
+                        var name_simple = name_complete.replace(ext, "");
+                        console.log("---> %s : %s (%s)", name_complete, name_simple, ext);
+                    });
+                });
