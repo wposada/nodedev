@@ -1,4 +1,4 @@
-function myparseo(){
+function myparseo(filesr,fechar){
 
 htmlToJson=require('html-to-json');
 var lineReader = require('line-reader');
@@ -15,8 +15,8 @@ var dirs="";
 var action="";
 var txt="";
 var agent="";
-var fecha="20150630 ";
-var arch="/media/sf_Ingress/Order/Junio/file_0630.txt";
+var fecha=fechar;
+var arch=filesr;
 var connection = mysql.createConnection({
    host: 'localhost',
    user: 'root',
@@ -154,19 +154,20 @@ function walk(currentDirPath, callback) {
     });
 }
 
-walk('/media/sf_Ingress/Order/Julio/', function(filePath, stat) {
-    var fs = require('fs');
-    console.log(filePath);
+function fechaFile(filePath){
+   var fs = require('fs');
+   var fecha;
     fs.stat(filePath, function(err, stats){
   if(err){
     console.error(err);
   }
   else{
-    console.dir(stats.mtime.toISOString().
-  replace(/T/, ' ').      // replace T with a space
-  replace(/\..+/, '') );
+    return stats.mtime.toISOString().replace(/T/, ' ').replace(/\..+/, '');
   }
 });
-    
-    
+}
+
+walk('/media/sf_Ingress/Order/Junio/', function(filePath, stat) {
+    var fs = require('fs');
+    console.log(filePath+"-"+fechaFile(filePath));
 });
