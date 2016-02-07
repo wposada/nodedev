@@ -93,7 +93,7 @@ var promise = htmlToJson.parse(html, {
   'action': [".pl_content", function ($spa) {
     var txt2=$spa.text();
     var txt2 = txt2.split(' ');
-    return txt2[1];
+    return txt2[1]+"<--";
   }],
 },function (err, result) {
 //  prettyJSON(result);
