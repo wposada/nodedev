@@ -18,6 +18,7 @@ function walk(currentDirPath, callback) {
 }
 
 walk('/media/sf_Ingress/Order/Julio/', function(filePath, stat) {
+    var fs = require('fs');
     console.log(filePath);
     fs.stat(filePath, function(err, stats){
   if(err){
