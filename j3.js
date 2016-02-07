@@ -17,6 +17,7 @@ var txt="";
 var agent="";
 var fecha=fechar;
 var arch=filesr;
+var fechafilecont="";
 var connection = mysql.createConnection({
    host: 'localhost',
    user: 'root',
@@ -121,7 +122,8 @@ lineReader.eachLine(arch, function(line) {
    if( txt=="captured"){
       if(res=="") {faction="ENL";}else{faction="RES";}
       captured=fecha+'_'+time;
-      connection.query('INSERT INTO guardians2 (agent, lat, lng,faction,captured) VALUES (?, ?, ?, ?,?) ON DUPLICATE KEY UPDATE agent=?, lat=?, lng=?,faction=?,captured=?',[agent,lat,lng,faction,captured,agent,lat,lng,faction,captured], function(err, rows, fields) {
+      fechafilecont=fecha;
+      connection.query('INSERT INTO guardians2 (agent, lat, lng,faction,captured,file) VALUES (?, ?, ?, ?,?,?) ON DUPLICATE KEY UPDATE agent=?, lat=?, lng=?,faction=?,captured=?',[agent,lat,lng,faction,captured,fechafilecont,agent,lat,lng,faction,captured,fechafilecont], function(err, rows, fields) {
       //connection.query('INSERT INTO portals (name, lat, lng) VALUES (?, ?, ?)',[names,lat,lng], function(err, rows, fields) {
          if (err) throw err;
       });
@@ -189,7 +191,7 @@ function walkSync(currentDirPath, callback) {
     });
 }
 
-walkSync('/media/sf_Ingress/Order/Prueba/', function(filePath, stat) {
+walkSync('/media/sf_Ingress/Order/Enero/', function(filePath, stat) {
         var fs = require('fs');
     var fechasalida=fechaFile(filePath);
 });
