@@ -124,7 +124,7 @@ lineReader.eachLine(arch, function(line) {
          if (err) throw err;
       });
   }
-  console.log(time+"-"+names+"-"+agent+"---"+enl+"-"+faction+"\n");
+  console.log(time+"-"+names+"-"+agent+"---"+enl+"-"+res+"\n");
 }).then(function () {
   console.log("I'm done!!");
   connection.end();
