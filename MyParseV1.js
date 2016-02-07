@@ -77,9 +77,9 @@ var promise = htmlToJson.parse(html, {
     dirs= $spa.text();
     return dirs;
   }],
-'enl': ['.ENLIGHTENED', function ($spa) {
-    enl= $spa.text();
-    return enl+"ss";
+'enl': ['.pl_nudge_player', function ($spa) {
+    enl= $spa.text()+"11";
+    return enl;
   }],
   'agent': [".pl_nudge_player", function ($spa) {
      //txt=$spa.text();
@@ -129,7 +129,7 @@ lineReader.eachLine(arch, function(line) {
          if (err) throw err;
       });
   }
-  console.log(time+"-"+names+"-"+agent+"-"+enl+"-"+txt+"\n");
+  console.log(time+"-"+names+"-"+agent+"---"+enl+"-"+txt+"\n");
 }).then(function () {
   console.log("I'm done!!");
   connection.end();
