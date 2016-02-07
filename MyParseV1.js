@@ -83,7 +83,7 @@ var promise = htmlToJson.parse(html, {
   'agent': [".pl_nudge_player", function ($spa) {
      //txt=$spa.text();
      agent=$spa.text();
-    return txt;
+    return agent;
   }],
    'txt': [".pl_content", function ($spa) {
      //txt=$spa.text();
